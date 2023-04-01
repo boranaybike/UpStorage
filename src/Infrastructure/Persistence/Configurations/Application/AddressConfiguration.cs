@@ -9,6 +9,8 @@ namespace Infrastructure.Persistence.Configurations.Application
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
+            builder.Property(x => x.addressType).IsRequired();
+            builder.Property(x => x.addressType).HasConversion<int>();
 
             // Relationships
             builder.HasOne<User>().WithMany()
