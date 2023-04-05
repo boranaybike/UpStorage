@@ -2,7 +2,7 @@
 
 namespace Domain.Identity
 {
-    public class Role: IdentityUserRole<string>
+    public class Role: IdentityRole<string>
     {
     }
 }
