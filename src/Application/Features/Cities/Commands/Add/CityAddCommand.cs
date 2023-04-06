@@ -11,4 +11,3 @@ namespace Application.Features.Cities.Commands.Add
         public decimal? Longitude { get; set; }
     }
 }
-}

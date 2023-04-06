@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Features.Excel.Commands.ReadCities
 {
-    public class ExcelReadCitiesCommandHandler : IRequestHandler<ExcelReadCitiesCommand, Response<int>
+    public class ExcelReadCitiesCommandHandler : IRequestHandler<ExcelReadCitiesCommand, Response<int>>
     {
         private readonly IApplicationDbContext _applicationDbContext;
         private readonly IExcelService _excelService;
