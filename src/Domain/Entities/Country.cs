@@ -17,7 +17,7 @@ namespace Domain.Entities
         public decimal? Latitude { get; set; }
         public decimal? Longitude { get; set; }
         public string WikiDataId { get; set; }
-        public ICollection<City> Cities { get; set; } //daha az null reference ve db işlemi olduğu için ICollection instead of list
+        public ICollection<City>? Cities { get; set; } //daha az null reference ve db işlemi olduğu için ICollection instead of list
 
     }
 }

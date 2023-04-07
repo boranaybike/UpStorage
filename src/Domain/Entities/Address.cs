@@ -3,16 +3,16 @@ using Domain.Enums;
 
 namespace Domain.Entities
 {
-    public class Address:EntityBase<Guid>
+    public class Address:EntityBase<int>
     {
         public string Name { get; set; }
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public Country? Country { get; set; }
 
         public int CityId { get; set; }
-        public City City { get; set; }
+        public City? City { get; set; }
 
         public string District { get; set; }
         public string PostCode { get; set; }
