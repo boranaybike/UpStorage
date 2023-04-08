@@ -30,6 +30,7 @@ namespace Application.Features.Addresses.Queries.GetAll
             return addressDtos.ToList();
         }
 
+
         private IEnumerable<AddressGetAllDto> MapAdressesToGetAllDtos(List<Address> addresses)
         {
             List<AddressGetAllDto> adressGetAllDtos = new List<AddressGetAllDto>();

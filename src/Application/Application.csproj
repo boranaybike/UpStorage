@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Addresses\Commands\Add\" />
     <Folder Include="Features\Addresses\Commands\Delete\" />
     <Folder Include="Features\Addresses\Commands\HardDelete\" />
     <Folder Include="Features\Addresses\Commands\Update\" />

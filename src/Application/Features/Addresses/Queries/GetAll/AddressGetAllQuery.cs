@@ -15,4 +15,3 @@ namespace Application.Features.Addresses.Queries.GetAll
     }
 
 }
-}
