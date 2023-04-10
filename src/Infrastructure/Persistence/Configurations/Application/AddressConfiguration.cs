@@ -19,7 +19,7 @@ namespace Infrastructure.Persistence.Configurations.Application
 
             // District
             builder.Property(x => x.District).IsRequired();
-            builder.Property(x => x.AddressLine2).HasMaxLength(100);
+            builder.Property(x => x.District).HasMaxLength(100);
 
             // PostCode
             builder.Property(x => x.PostCode).IsRequired();
@@ -34,8 +34,8 @@ namespace Infrastructure.Persistence.Configurations.Application
 
 
             // AddresssType
-            builder.Property(x => x.addressType).IsRequired();
-            builder.Property(x => x.addressType).HasConversion<int>();
+            builder.Property(x => x.AddressType).IsRequired();
+            builder.Property(x => x.AddressType).HasConversion<int>();
 
             /* Common Fields */
 
@@ -64,9 +64,9 @@ namespace Infrastructure.Persistence.Configurations.Application
             builder.Property(x => x.IsDeleted).IsRequired();
             builder.Property(x => x.IsDeleted).HasDefaultValueSql("0");
 
-            // Relationships
-            builder.HasOne<User>().WithMany()
-                .HasForeignKey(x => x.UserId);
+            //// Relationships
+            //builder.HasOne<User>().WithMany()
+            //    .HasForeignKey(x => x.UserId);
 
             builder.ToTable("Addresses");
 

@@ -17,14 +17,9 @@ namespace Application.Features.Addresses.Queries.GetAll
         {
             var dbQuery = _applicationDbContext.Addresses.AsQueryable();
 
-            dbQuery = dbQuery.Where(x => x.UserId == request.UserId);
-
             if (request.IsDeleted.HasValue) dbQuery = dbQuery.Where(x => x.IsDeleted == request.IsDeleted.Value);
 
-            dbQuery = dbQuery.Include(x => x.UserId);
-
             var addresses = await dbQuery.ToListAsync(cancellationToken);
-
             var addressDtos = MapAdressesToGetAllDtos(addresses);
 
             return addressDtos.ToList();
@@ -51,7 +46,7 @@ namespace Application.Features.Addresses.Queries.GetAll
                     PostCode = address.PostCode,
                     AddressLine1 = address.AddressLine1,
                     AddressLine2= address.AddressLine2,
-                    addressType = address.addressType
+                    addressType = address.AddressType
                 };
             }
         }

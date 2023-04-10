@@ -15,6 +15,6 @@ namespace Application.Features.Addresses.Commands.Add
         public string PostCode { get; set; }
         public string AddressLine1 { get; set; }
         public string? AddressLine2 { get; set; }
-        public AddressType addressType { get; set; }
+        public AddressType AddressType { get; set; }
     }
 }

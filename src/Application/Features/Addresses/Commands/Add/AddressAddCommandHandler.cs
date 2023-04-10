@@ -1,7 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Common;
 using Domain.Entities;
-using Domain.Extensions;
 using MediatR;
 
 namespace Application.Features.Addresses.Commands.Add
@@ -17,10 +16,6 @@ namespace Application.Features.Addresses.Commands.Add
         }
         public async Task<Response<int>> Handle(AddressAddCommand request, CancellationToken cancellationToken)
         {
-            if (!request.Name.IsContainsChar(3))
-            {
-                throw new Exception();
-            }
 
             var address = new Address()
             {
@@ -32,8 +27,11 @@ namespace Application.Features.Addresses.Commands.Add
                 PostCode = request.PostCode,
                 AddressLine1 = request.AddressLine1,
                 AddressLine2 = request.AddressLine2,
-                addressType = request.addressType,
+                AddressType = request.AddressType,
                 IsDeleted = false,
+                CreatedOn = DateTimeOffset.Now,
+                CreatedByUserId = null,
+
             };
 
             await _applicationDbContext.Addresses.AddAsync(address, cancellationToken);
