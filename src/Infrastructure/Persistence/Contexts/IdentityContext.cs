@@ -19,13 +19,13 @@ namespace Infrastructure.Persistence.Contexts
             // Configurations
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            // Ignores
-            modelBuilder.Ignore<Account>();
-            modelBuilder.Ignore<Country>();
-            modelBuilder.Ignore<City>();
-            modelBuilder.Ignore<AccountCategory>();
-            modelBuilder.Ignore<Category>();
-            modelBuilder.Ignore<Address>();
+            //// Ignores
+            //modelBuilder.Ignore<Account>();
+            //modelBuilder.Ignore<Country>();
+            //modelBuilder.Ignore<City>();
+            //modelBuilder.Ignore<AccountCategory>();
+            //modelBuilder.Ignore<Category>();
+            //modelBuilder.Ignore<Address>();
 
 
             base.OnModelCreating(modelBuilder);

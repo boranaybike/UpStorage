@@ -1,6 +1,5 @@
 ﻿using Domain.Common;
 using MediatR;
-using Domain.Entities;
 
 namespace Application.Features.Excel.Commands.ReadCities
 {

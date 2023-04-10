@@ -19,6 +19,9 @@ namespace Infrastructure.Persistence.Configurations.Application
             builder.HasOne<Category>(x => x.Category)
                 .WithMany(x=>x.NoteCategories)
                 .HasForeignKey(x=>x.CategoryId);
+
+            builder.ToTable("NoteCategories");
+
         }
     }
 }
