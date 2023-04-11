@@ -17,14 +17,13 @@ namespace Application.Features.Cities.Commands.Add
 
         public async Task<Response<int>> Handle(CityAddCommand request, CancellationToken cancellationToken)
         {
-            if (!await _applicationDbContext.Countries.AnyAsync(x => x.Id == request.CountryId, cancellationToken))
-            {
-                throw new ArgumentNullException(nameof(request.CountryId));
-            }
+            var commandValidator = new CityAddCommandValidator(_applicationDbContext);
 
-            if (await _applicationDbContext.Cities.AnyAsync(x => x.Name.ToLower() == request.Name.ToLower(), cancellationToken))
+            var result = await commandValidator.ValidateAsync(request, cancellationToken);
+
+            if (!result.IsValid)
             {
-                throw new ArgumentNullException(nameof(request.Name));
+                throw new NullReferenceException("Fluent Validation Works!");
             }
 
             var city = new City()
