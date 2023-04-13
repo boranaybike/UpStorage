@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(opt => {
     //opt.Filters.Add<ValidationFilter>();
+    opt.Filters.Add<GlobalExceptionFilter>();
     });
 
 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
