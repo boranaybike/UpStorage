@@ -1,4 +1,5 @@
 ﻿using Application.Common.Models.Auth;
+using Application.Features.Auth.Commands.Login;
 
 namespace Application.Common.Interfaces
 {
@@ -7,5 +8,6 @@ namespace Application.Common.Interfaces
         Task<string> CreateUserAsync(CreateUserDto createUserDto, CancellationToken cancellationToken);
         Task<string> GenerateEmailActivationTokenAsync(string userId, CancellationToken cancellationToken);
         Task<bool> CheckIfUserExist(string email, CancellationToken cancellationToken);
+        Task<JwtDto> LoginAsync(AuthLoginRequest authLoginRequest, CancellationToken cancellationToken);
     }
 }
