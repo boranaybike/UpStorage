@@ -46,6 +46,11 @@ namespace Infrastructure
             services.AddScoped<IAuthenticationService, AuthenticationManager>();
             services.AddSingleton<IJwtService, JwtManager>();
 
+
+            //Singleton Services
+            services.AddSingleton<ITwoFactorService, TwoFactorManager>();
+
+
             return services;
         }
     }
